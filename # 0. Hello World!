@@ -7,3 +7,13 @@
 
 // # 0. Hello World !
 
+#include <stdio.h>
+
+int main()
+{
+	printf("Hello World!\n");	
+	
+	return 0;
+}
+
+먼저 소스코드에 대한 개념부터 살펴보자.
