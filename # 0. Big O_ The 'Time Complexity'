@@ -1,0 +1,20 @@
+/****************************************************************
+******** Language : C *******************************************
+************** OS : Windows ************************************
+*********************** IDE : Dev C++  and  VScode **************
+********************************** Let's start! ********************
+******************************************************************/
+
+
+
+# 0. Big O_ The 'Time Complexity'
+
+For Solving about example, we need to think about 'How can solve more faster with correct answer?'
+It can show X-axis is 'Example size' and Y-axis is 'Spend Time'  in XY 2-Dimentional Graph.
+
+Looks like Exponential Function is bad. Because even Example size is small but spend too much time.
+Oppositly, Looks like Log Function is good. Because spend not so much time even Big Example Size.
+
+So, we will find Log Function Algorithm.
+
+From this post, we will start learn about Basic Algorithm as Bubble Sort / Selection Sort / Insertion Sort / Quick Sort / Merge Sort
