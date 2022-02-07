@@ -1,0 +1,97 @@
+/****************************************************************
+******** Language : C *******************************************
+************** OS : Windows *************************************
+*********************** IDE : Dev C++  and  VScode **************
+********************************** Let's start! *****************
+******************************************************************/
+
+# 5. Switch & case
+
+#include <stdio.h>
+
+int main()
+{
+	int choice;
+	
+	printf("[1. Dog / 2. Cat / 3. Otto / 4. Rabbit / 5. Fox]");
+	printf("Let's select what's your Favorite animal? : ");
+	scanf_s("%d",&choice);
+	
+	switch (choice)
+	{
+		case 1:
+			printf("Oh you choose dog? i like too!\n");
+			break;
+		
+		case 2:
+			printf("CAAAAAAAAAAAAAAT!!! My favorite!\n");
+			break;
+			
+		case 3:
+			printf("So cute Otto. i usually watch otto video~\n");
+			break;
+			
+		case 4:
+			printf("Rabbit So cute. big ears. jump walk~~\n");
+			break;
+			
+		case 5:
+			printf("Fox is another level cute.\n");
+			break;
+			
+		default:
+			printf("Animal is human friend!\n");
+			break;
+	}
+	
+	
+	return 0;
+}
+
+----------------------------------------------------------------------------------------------------------
+
+Today post is Switch Case method.
+소스코드를 하나씩 살펴보겠습니다.
+
+- Switch? case ??
+§ 이름 그대로 '스위치'입니다. 트리거 포인트를 여러개 만들어 놓고 특정 트리거를 선택할 시, 그에 맞는 case 구문이 실행이 됩니다.
+위 소스코드를 그대로 갖고 가셔서 좋아하는 동물의 번호를 눌러보시면 그 번호에 해당하는 case의 printf 코드가 출력됩니다.
+
+----------------------------------------------------------------------------------------------------------
+
+- 왜 구문마다 break를 달아놓았는지?
+§ break를 하지 않으면 나는 3번을 선택했는데 그 아래 4번, 5번도 함께 출력되는 결과를 가져오게 됩니다. 
+이름에서도 알 수 있듯이 break는 조건문 혹은 반복문을 빠져나갈 때 사용합니다.
+
+for문으로도 예시를 들겠습니다.
+
+#include <stdio.h>
+
+int main()
+{
+	int i;
+	
+	for (i = 1; i<=10; i++)
+	{
+		printf("%d ",i);
+		if (i==8)
+		{
+			printf("oh stop!\n");
+			break;
+		}
+	}
+	
+	return 0;
+}
+
+변수 i를 1부터 시작해서 10까지 1씩 증가시키고 있는데, i가 8이 될때 멈추고 싶어서 oh stop! 이라는 문구와 함께 break를 걸었습니다.
+그럼 이 경우 출력을 해보면 9와 10은 출력되지 않고 8까지만 나오고 oh stop! 과 함께 끝납니다.
+
+break의 기능은 이와 같습니다.
+따라서 Switch 구문에서도 break를 통해 다른 case들이 나오지 않도록 합니다.
+
+----------------------------------------------------------------------------------------------------------
+
+- default?
+§ default는 case 1 ~ 5에 해당하지 않는 번호를 선택했을 경우 나오게 하는 코드입니다.
+사실 default는 적지 않아도 괜찮습니다. 그냥 아무것도 출력이 안나올뿐 문법상 에러는 없습니다.
