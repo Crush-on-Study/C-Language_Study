@@ -1,0 +1,48 @@
+/****************************************************************
+******** Language : C *******************************************
+************** OS : Windows ************************************
+*********************** IDE : Dev C++  and  VScode **************
+********************************** Let's start! ********************
+******************************************************************/
+
+
+// # 2. Algorithm [Selection Sort]
+// # 2. Slection Sort
+
+#include <stdio.h>
+
+int main()
+{
+	int i,j,change,max,index;
+	
+	int num[10] = {5,1,10,3,2,6,9,8,4,7};
+	
+	for (i=0; i<10; i++)
+	{
+		max = 9999;
+		for (j=i; j<10; j++)
+		{
+			if (max>num[j])
+			{
+				max = num[j];
+				index = j;
+			}
+		}
+		change = num[i];
+		num[i] = num[index];
+		num[index] = change;
+	}
+	
+	for (i=0; i<10; i++)
+	{
+		printf("%d ",num[i]);
+	}
+	
+	
+	return 0;
+}
+
+/* Time Complexity
+Best = N^2
+Average = N^2
+Worst = N^2  */
