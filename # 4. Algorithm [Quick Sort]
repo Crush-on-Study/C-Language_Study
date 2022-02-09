@@ -1,0 +1,77 @@
+/****************************************************************
+******** Language : C *******************************************
+************** OS : Windows ************************************
+*********************** IDE : Dev C++  and  VScode **************
+********************************** Let's start! ********************
+******************************************************************/
+
+
+// # 4. Algorithm [Quick Sort]
+
+#include <stdio.h>
+
+int number = 10;  // main함수 for문 조건식을 위함. 
+int num[10] = {3,6,9,10,2,4,8,7,1,5};
+
+void quicksort (int num[] , int start, int end)
+{
+	if (start>=end)
+	{
+		return;  // 정렬이 끝날 시 실행 
+	}
+	
+	int key = start; // 시작
+	int i = start+1;
+	int j = end;
+	int change; // swap을 위한 변수
+	 
+	while (i<=j)
+	{
+		while (num[i]<=num[start])
+		{
+			i++;
+		}
+		
+		while (num[j]>num[start] && j>start)
+		{
+			j--;
+		}
+		
+		if (i>j)
+		{
+			change = num[j];
+			num[j] = num[key];
+			num[key] = change;
+		}
+		
+		else
+		{
+			change = num[j];
+			num[j] = num[i];
+			num[i] = change;
+		}
+	}
+	
+	quicksort (num,start, j-1);
+	quicksort (num,j+1,end); 
+}
+
+int main()
+{
+	int i;
+	quicksort (num,0,number-1);
+	for (i=0; i<number; i++)
+	{
+		printf("%d ",num[i]);
+	}
+	
+	
+	return 0;
+}
+
+/* Time Complexity
+Best = NlogN
+Average = NlogN
+Worst = N^2 */
+
+// Ustable Arrangement.
