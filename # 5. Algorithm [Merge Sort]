@@ -1,0 +1,88 @@
+// OS : Dev C++
+
+
+// # 5. Algorithm [Merge Sort]
+
+#include <stdio.h>
+
+int number = 10;   
+int sorted[10];    // 머지소트 특성상 새로 생성되는 배열이 많기 때문에 비효율적인 메모리 사용을 박기 위해 전역변수로 배열 선언
+
+void merge (int a[], int L, int middle, int R)
+{
+	int i = L;
+	int j = middle+1;
+	int k = L;   // 새로 생성되는 배열 역시 시작은 L이므로.
+	
+	while(i<=middle && j<=R)
+	{
+		if (a[i]<=a[j])
+		{
+			sorted[k] = a[i];
+			i++;
+		}
+		
+		else
+		{
+			sorted[k] = a[j];
+			j++;
+		}
+		k++;		
+	}
+	
+	if (i>middle)
+	{
+		int t;
+		for (t=j; t<=R; t++)
+		{
+			sorted[k] = a[t];
+			k++;
+		}
+	}   	
+	else
+	{
+		int t;
+		for (t=i; t<=middle; t++)
+		{
+			sorted[k] = a[t];
+			k++;
+		}
+	}
+    int t;
+	for (t=L; t<=n; t++)
+	{
+		
+		a[t] = sorted[t];
+	}
+
+}
+void mergesort (int a[],int L , int R)
+{
+	if (L<R)
+	{
+		int middle = (L+R)/2;
+		mergesort (a,L,middle);
+		mergesort (a,middle+1,R);
+		merge (a,L,middle,R);
+	}
+}
+
+int main()
+{
+	int i;
+	int array[10] = {1,3,5,7,9,2,4,6,8,10};
+	mergesort (array,0, number-1);
+	for (i=0; i<number; i++)
+	{
+		printf("%d ",array[i]);
+	}
+	return 0;
+}
+
+
+/* Time Complexity
+Best : NlogN
+Average : NlogN
+Worst : NlogN
+
+Slower than QuickSort / but stable.
