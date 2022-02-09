@@ -49,7 +49,7 @@ void merge (int a[], int L, int middle, int R)
 		}
 	}
     int t;
-	for (t=L; t<=n; t++)
+	for (t=L; t<=R; t++)
 	{
 		
 		a[t] = sorted[t];
