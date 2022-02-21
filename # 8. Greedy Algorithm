@@ -1,0 +1,26 @@
+// 가장 간단한 그리디 알고리즘의 예시 (거스름돈 계산)
+
+#include <stdio.h>
+
+int main()
+{
+	int n,result;
+	scanf("%d",&n);
+	n= 10000 - n;
+	
+	result += n/5000;
+	n %= 5000;
+	result += n/1000;
+	n %= 1000;
+	result += n/500;
+	n %= 500;
+	result += n/100;
+	n %= 100;
+	result += n/50;
+	n %= 50;
+	result += n/10;
+	
+	printf("%d",result);
+	
+	return 0;
+}
